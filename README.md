@@ -211,60 +211,46 @@
 Currently, our ToonCrafter can support generating videos of up to 16 frames with a resolution of 512x320. The inference time can be reduced by using fewer DDIM steps.
 
 
+### Installation Steps
 
-## ⚙️ Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/IHEfty/ToonCrafter-for-windows.git
+   cd ToonCrafter-for-windows
+   ```
 
-# ⚒️ Installation
+2. Run the installation script:
+   - For English: `install.ps1` (Powershell)
+   - For Chinese: `install-cn.ps1` (Powershell)
 
-prerequisites: `3.11>=python>=3.8`, `CUDA>=11.3`, `ffmpeg` and `git`.
+3. **Download Models Automatically**: Models will be downloaded during installation, so there is no need for manual downloads.
 
-Python and Git:
+## 💫 Running Inference
 
-- Python 3.10.11: https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe
-- git: https://git-scm.com/download/win
+### 1. Command Line Execution
 
-Give unrestricted script access to powershell so venv can work:
-
-- Open an administrator powershell window
-- Type `Set-ExecutionPolicy Unrestricted` and answer A
-- Close admin powershell window
-
-```
-git clone https://github.com/sdbds/ToonCrafter-for-windows
-```
-
-Install with Powershell run `install.ps1` or `install-cn.ps1`(for Chinese)
-
-## No need Download models manually
-
-
-## 💫 Inference
-### 1. Command line
-
-Download pretrained ToonCrafter_512 and put the `model.ckpt` in `checkpoints/tooncrafter_512_interp_v1/model.ckpt`.
+Download the pre-trained ToonCrafter_512 model and place `model.ckpt` in `checkpoints/tooncrafter_512_interp_v1/model.ckpt`. Then, execute:
 ```bash
-  sh scripts/run.sh
+sh scripts/run.sh
+```
+Or
+```bash
+cd scripts
+run.bat
 ```
 
+### 2. Local Gradio Demo
 
-### 2. Local Gradio demo
+To launch a local Gradio GUI demo:
+   ```bash
+   powershell -File run_gui.ps1
+   ```
 
-Powershell run with `run_gui.ps1`
-
-
-
-
-
-
-<!-- ## 🤝 Community Support -->
-
-
-
-<a name="disc"></a>
 ## 📢 Disclaimer
-Calm down. Our framework opens up the era of generative cartoon interpolation, but due to the variaity of generative video prior, the success rate is not guaranteed.
 
-⚠️This is an open-source research exploration, instead of commercial products. It can't meet all your expectations.
+This framework initiates generative cartoon interpolation, though results may vary due to the stochastic nature of video generation models. This open-source research tool is not intended for commercial applications and may not fulfill all expectations.
 
-This project strives to impact the domain of AI-driven video generation positively. Users are granted the freedom to create videos using this tool, but they are expected to comply with local laws and utilize it responsibly. The developers do not assume any responsibility for potential misuse by users.
+### Responsible Use
+
+We aim to positively impact AI-driven video generation. This tool is provided for responsible, lawful use only. Users must adhere to local laws, and the developers do not assume liability for misuse. 
 ****
